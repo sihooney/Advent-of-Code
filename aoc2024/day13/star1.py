@@ -3,8 +3,7 @@ from re import findall
 from math import isclose
 
 
-data = list(map(lambda s: list(map(int, findall(r'\d+', s))),
-            open("day13.txt").read().split("\n\n")))
+data = list(map(lambda s: list(map(int, findall(r'\d+', s))), open("day13.txt").read().split("\n\n")))
 ans = 0
 for arr in data:
     sol = linalg.solve([[arr[0], arr[2]], [arr[1], arr[3]]], [arr[4], arr[5]])
