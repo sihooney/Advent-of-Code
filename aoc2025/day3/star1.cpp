@@ -10,8 +10,8 @@ int main()
     int ans{0};
     while (in >> s)
     {
-        int start, tens{0}, ones{0};
-        for (int i = s.length() - 2; i >= 0; --i)
+        size_t start, tens{0}, ones{0};
+        for (size_t i{s.length() - 1}; i-- > 0;)
         {
             if (s[i] - '0' >= tens)
             {
@@ -19,7 +19,7 @@ int main()
                 start = i;
             }
         }
-        for (int j = start + 1; j < s.length(); ++j)
+        for (size_t j{start + 1}; j < s.length(); ++j)
         {
             ones = s[j] - '0' > ones ? s[j] - '0' : ones;
         }
