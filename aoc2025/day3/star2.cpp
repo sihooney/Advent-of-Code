@@ -14,14 +14,14 @@ int main()
     set<int> pos[10];
     while (in >> s)
     {
-        for (int i = 0; i < s.length(); ++i)
+        for (size_t i{0}; i < s.length(); ++i)
         {
             pos[s[i] - '0'].insert(i);
         }
         int pre{-1};
-        for (int n = 12; n > 0; --n)
+        for (int n{12}; n > 0; --n)
         {
-            for (int digit = 9; digit > 0; --digit)
+            for (int digit{9}; digit > 0; --digit)
             {
                 if (pos[digit].empty())
                 {
@@ -36,7 +36,7 @@ int main()
                 }
             }
         }
-        for (int i = 0; i < 10; ++i)
+        for (int i{0}; i < 10; ++i)
         {
             pos[i] = set<int>();
         }
