@@ -8,16 +8,17 @@ using namespace std;
 vector<vector<char>> a;
 int dir[8][2]{{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
 unordered_set<int> s;
+int ans{0};
 
 int offset()
 {
     return max(a.size(), a[0].size()) + 1;
 }
 
-void solve(int &n)
+void solve()
 {
     bool removed{false};
-    for (auto it = s.begin(); it != s.end();)
+    for (unordered_set<int>::iterator it{s.begin()}; it != s.end();)
     {
         int r{*it / offset()}, c{*it % offset()}, cnt{0};
         for (const auto &[dr, dc] : dir)
@@ -30,7 +31,7 @@ void solve(int &n)
         if (cnt < 4)
         {
             it = s.erase(it);
-            ++n;
+            ++ans;
             removed = true;
         }
         else
@@ -42,7 +43,7 @@ void solve(int &n)
     {
         return;
     }
-    solve(n);
+    solve();
 }
 
 int main()
@@ -65,8 +66,7 @@ int main()
             }
         }
     }
-    int total{0};
-    solve(total);
-    cout << total << endl;
+    solve();
+    cout << ans << endl;
     return 0;
 }
