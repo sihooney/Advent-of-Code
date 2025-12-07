@@ -10,7 +10,7 @@ int main()
 {
     ifstream in("day6.txt");
     string s;
-    ll ans{0};
+    ll total{0};
     int x;
     vector<vector<int>> a;
     while (getline(in, s))
@@ -41,11 +41,11 @@ int main()
                         res *= a[r][c];
                     }
                 }
-                ans += res;
+                total += res;
             }
             break;
         }
     }
-    cout << ans << endl;
+    cout << total << endl;
     return 0;
 }
