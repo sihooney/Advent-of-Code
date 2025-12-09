@@ -61,6 +61,8 @@ int main()
         }
         vals.push_back(n);
     }
+    delete[] a;
+    a = nullptr;
     cout << total << endl;
     return 0;
 }
