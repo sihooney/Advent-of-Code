@@ -64,6 +64,7 @@ int main()
     {
         nodes.emplace_back(Point{x, y, z});
     }
+    in.close();
     for (int i{0}; i < nodes.size() - 1; ++i)
     {
         for (int j{i + 1}; j < nodes.size(); ++j)
