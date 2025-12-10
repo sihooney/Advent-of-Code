@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <cmath>
+#include <cstdlib>
 
 using namespace std;
 using ll = long long;
