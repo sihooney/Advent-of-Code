@@ -3,7 +3,6 @@
 #include <vector>
 #include <cstdlib>
 #include <algorithm>
-#include <cmath>
 
 using namespace std;
 using ll = long long;
